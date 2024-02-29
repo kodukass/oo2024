@@ -12,7 +12,7 @@ class Vibu
 
 class Jubin 
 {
-    name: string;
+    name: string; //massiiv peaks olema
 
     constructor(name: string)
     {
