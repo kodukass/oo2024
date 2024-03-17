@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kodutöö</title>
+    <script src="kodutöö6.js"></script>
+    <script>
+      let colors=[];
+      function startPage(){
+         colors[0]=new orange(); 
+         colors[1]=new green(); 
+         colors[2]=new purple();
+     mixColors();
+  }
+  function mixColors(){
+     type1.innerText=colors[color1.selectedIndex].first();
+     type2.innerText=colors[color2.selectedIndex].second();
+     answer.innerText='';
+      }
+  function buttonClick(){
+     combination=colors.calculate([color1.selectedIndex]+[color2.selectedIndex]);
+     answer.innerText=combination;
+  }
+  </script>
+</head>
+<body onload="startPage()">
+
+    <span id="type1"></span>
+    <select id="color1" onchange="mixColors()">
+     <option>kollane</option>
+     <option>punane</option>
+     <option>sinine</option>
+  </select>  
+   <span id="type2" ></span>
+  
+  <select id="color2" onchange="mixColors()">
+    <option>kollane</option>
+    <option>punane</option>
+    <option>sinine</option>
+ </select>
+ <input type="button" value="=" onclick="buttonClick()" />&nbsp;
+ <span id="answer"></span>
+</body>
+</html>
