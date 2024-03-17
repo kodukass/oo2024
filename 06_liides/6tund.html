@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Arvutused</title>
+    <script src="6tund.js"></script>
+    <script>
+      let calculators=[];
+      function startPage(){
+         calculators[0]=new CmToInch(); 
+         calculators[1]=new InchesToCm(); 
+         calculators[2]=new CmToKm(); 
+         calculators[3]=new KmHToMS(); 
+     activateCalculator();
+  }
+  function activateCalculator(){
+     type1.innerText=calculators[calculatorSelect.selectedIndex].inputUnit();
+     type2.innerText=calculators[calculatorSelect.selectedIndex].outputUnit();
+     answer.innerText="";
+     input1.value="";
+      }
+  function buttonClick(){
+     answer.innerText=calculators[calculatorSelect.selectedIndex].
+                            calculate(input1.valueAsNumber).toFixed(2);
+  }
+  </script>
+<meta charset="utf-8" />
+</head>
+<body onload="startPage()">
+
+    <input type="number" id="input1" onchange="buttonClick()"> <span id="type1"></span>
+      <input type="button" value="=" onclick="buttonClick()" />&nbsp;
+  <span id="answer"></span> <span id="type2" ></span><br />
+  <select id="calculatorSelect" onchange="activateCalculator()">
+     <option>sentimeetrid tollideks</option>
+     <option>tollid sentimeetriteks</option>
+     <option>sentimeetrid kilomeetriteks</option>
+     <option>kilomeetrit tunnis meetrit sekundiks</option>
+  </select>
+</body>
+</html>
