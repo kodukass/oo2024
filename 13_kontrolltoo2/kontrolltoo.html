@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Kontrolltöö - Tuba ja taburetid</title>
+    <script src="kontrolltoo.js"></script>
+    <script>
+        let t1, t2, t3, tuba;
+        function startPage(){
+          //kuhu toolid tulevad
+            t1=new Taburet(10,10);  
+            t2=new Taburet(50,10);
+            t3=new Taburet(80,10);
+            p1=new Pink(60,30);
+            //teeb toa
+            tuba=new Tuba(100,100);
+            //lükkab toolid tuppa
+            tuba.addPink(p1);
+            tuba.addTaburet(t1);
+            tuba.addTaburet(t2);  
+            tuba.addTaburet(t3); 
+            //joonistab toa
+            tuba.draw(canvas1.getContext("2d"), 10, 50);
+        }
+        
+    </script>
+    <meta charset="utf-8">
+  </head>
+  <body onload="startPage()">
+    <canvas id="canvas1" width="400" height="200"></canvas><br />
+    <p>Lisa toole:</p>
+    <label for="pikkus">Tabureti pikkus:</label>
+    <input type="number" id="pikkus" name="pikkus"><br><br>
+    <label for="laius">Tabureti laius:</label>
+    <input type="number" id="laius" name="laius"><br><br>
+    <button onclick="newTaburet()">Lisa taburet</button>
+    <br>
+    <br>
+    <label for="pikkus">Pingi pikkus:</label>
+    <input type="number" id="pikkus" name="pikkus"><br><br>
+    <label for="laius">Pingi laius:</label>
+    <input type="number" id="laius" name="laius"><br><br>
+    <button onclick="newPink()">Lisa pink</button>
+</body>
+</html>
